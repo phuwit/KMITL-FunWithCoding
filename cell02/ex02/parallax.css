@@ -1,0 +1,34 @@
+body {
+    margin: 0px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-image {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#parallax-image-1 {
+    background-image: url("https://images.unsplash.com/photo-1613310023042-ad79320c00ff");
+
+}
+
+#parallax-image-2 {
+    background-image: url("https://images.unsplash.com/photo-1575489272413-cb506258027e");
+}
+
+.parallax-text {
+    width: 100%;
+    height: 50vh;
+    background-color: black;
+    color: white;
+}
