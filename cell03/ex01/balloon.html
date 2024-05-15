@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balloon</title>
+    <style>
+      body {
+        margin: 0px;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #balloon {
+        width: 200px;
+        height: 200px;
+        border-radius: 999px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="balloon"></canvas>
+
+    <script>
+      const balloon = document.getElementById("balloon");
+      balloon.style.backgroundColor = 'red';
+      let clicked = false;
+
+      const colors = ['red', 'green', 'blue'];
+
+      function cycleColor() {
+        let colorIndex = colors.findIndex((element) => element === balloon.style.backgroundColor);
+        let size = Number(window.getComputedStyle(balloon).width.slice(0, -2));
+
+        if(clicked) {
+          colorIndex += 1;
+          if (colorIndex >= colors.length) {
+            colorIndex = 0;
+          }
+
+          size += 10;
+          if (size > 420) {
+            size = 200
+          }
+        } else {
+          colorIndex -= 1;
+          if (colorIndex < 0) {
+            colorIndex = colors.length - 1;
+          }
+
+          size -= 5;
+          if (size < 200) {
+            size = 200;
+          }
+        }
+
+        console.log(size)
+        console.log(colorIndex)
+
+        balloon.style.backgroundColor = colors[colorIndex];
+        balloon.style.width = `${size}px`;
+        balloon.style.height = `${size}px`;
+      }
+
+      balloon.addEventListener("mousedown", (event) => {
+        clicked = true;
+        cycleColor();
+      });
+
+      balloon.addEventListener("mouseleave", (event) => {
+        if (clicked === false) {
+          cycleColor();
+        }
+        clicked = false;
+      });
+    </script>
+  </body>
+</html>
