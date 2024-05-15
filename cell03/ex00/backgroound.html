@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgroound</title>
+    <link rel="stylesheet" type="text/css" href="backgroound.css" />
+</head>
+<body>
+    <button id="change-color">Change background color!</button>
+
+    <script>
+        const button = document.getElementById('change-color');
+
+        function getRandomColor() {
+            const possibleColorChar = '0123456789ABCDEF';
+            let color = '#'
+            for(let i = 0; i < 6; i++) {
+                const randomIndex = Math.floor(Math.random() * possibleColorChar.length);
+                color += possibleColorChar[randomIndex]
+            }
+            return color
+        }
+
+        button.addEventListener("mousedown", (event) => {
+
+            document.body.style.backgroundColor = getRandomColor();
+        });
+    </script>
+</body>
+</html>
