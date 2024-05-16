@@ -30,3 +30,23 @@
   font-weight: 700;
   font-style: normal;
 }
+
+.solid-shadow {
+  box-shadow: 16px 16px 0 0 #000
+}
+
+html {
+  cursor: none;
+}
+
+#circularcursor {
+  background-color: transparent;
+  border:3px solid black;
+  height:30px;
+  width:30px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  position: absolute;
+  z-index: 1;
+}
