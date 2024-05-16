@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.baloo-thambi-2-400 {
+  font-family: "Baloo Thambi 2", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.baloo-thambi-2-500 {
+  font-family: "Baloo Thambi 2", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.baloo-thambi-2-600 {
+  font-family: "Baloo Thambi 2", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.baloo-thambi-2-700 {
+  font-family: "Baloo Thambi 2", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
