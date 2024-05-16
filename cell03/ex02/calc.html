@@ -97,9 +97,11 @@
         const n2 = Number(textBoxn2.value);
         let result = "Error :(";
 
-        if (n1 === NaN || n1 < 0 || n2 === NaN || n2 < 0) {
-          display(result);
-          return null;
+        console.log(n1, operation, n2);
+
+        if (String(n1) == "NaN" || n1 < 0 || String(n2) == "NaN" || n2 < 0) {
+          display('Error :(');
+          return;
         }
 
         switch (operation) {
