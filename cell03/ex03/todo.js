@@ -9,6 +9,9 @@ addClickDetector();
 
 newButton.addEventListener("mouseup", () => {
   const title = window.prompt('Todo title:');
+  if (!title) {
+    return
+  }
   addTodoToCookie(title);
   loadTodosFromCookie();
   addClickDetector();
@@ -50,7 +53,7 @@ function addClickDetector() {
       if(!window.confirm(`remove "${node.textContent}?"`)) {
         return;
       }
-      
+
       node.remove();
 
       const cookies = document.cookie.split("; ");
