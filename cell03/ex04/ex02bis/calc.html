@@ -54,7 +54,7 @@
         </div>
 
         <div>
-          <label for="n1">Operation: </label>
+          <label for="operationSelector">Operation: </label>
           <select id="operationSelector">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -77,11 +77,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script>
-      const operationSelector = document.getElementById("operationSelector");
-      const calculateButton = document.getElementById("calculateButton");
-      const textBoxn1 = document.getElementById("n1");
-      const textBoxn2 = document.getElementById("n2");
-
       function display(text) {
         console.log(text);
         window.alert(text);
@@ -92,44 +87,46 @@
         30 * 1000
       );
 
-      calculateButton.addEventListener("mouseup", () => {
-        const operation = operationSelector.value;
-        const n1 = Number(textBoxn1.value);
-        const n2 = Number(textBoxn2.value);
-        let result = "Error :(";
+      $(document).ready(function(){
+        $("#calculateButton").mouseup(function(){
+          const operation = $("#operationSelector").val();
+          const n1 = Number($("#n1").val());
+          const n2 = Number($("#n2").val());
+          let result = "Error :(";
 
-        console.log(n1, operation, n2);
+          console.log(n1, operation, n2);
 
-        if (String(n1) == "NaN" || n1 < 0 || String(n2) == "NaN" || n2 < 0) {
-          display('Error :(');
-          return;
-        }
+          if (isNaN(n1) || n1 < 0 || isNaN(n2) || n2 < 0) {
+            display(result);
+            return;
+          }
 
-        switch (operation) {
-          case "+":
-            result = n1 + n2;
-            break;
-          case "-":
-            result = n1 - n2;
-            break;
-          case "*":
-            result = n1 * n2;
-            break;
-          case "/":
-            result = n1 / n2;
-            break;
-          case "%":
-            result = n1 % n2;
-            if (n2 === 0) {
-              result = "It's over 9000!";
-            }
-            break;
-          default:
-            result = "Error :(";
-            break;
-        }
+          switch (operation) {
+            case "+":
+              result = n1 + n2;
+              break;
+            case "-":
+              result = n1 - n2;
+              break;
+            case "*":
+              result = n1 * n2;
+              break;
+            case "/":
+              result = n1 / n2;
+              break;
+            case "%":
+              result = n1 % n2;
+              if (n2 === 0) {
+                result = "It's over 9000!";
+              }
+              break;
+            default:
+              result = "Error :(";
+              break;
+          }
 
-        display(result);
+          display(result);
+        });
       });
     </script>
   </body>
