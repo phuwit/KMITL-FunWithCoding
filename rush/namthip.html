@@ -16,11 +16,51 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-black w-full min-h-screen baloo-thambi-2-400 p-4">
+  <body class="bg-black baloo-thambi-2-400">
     <div id="circularcursor"></div>
-    <div
-      class="bg-[url('assets/gray-pattern.svg')] bg-[length:7px_7px] w-full h-full rounded-t-md py-32"
-    >
+    <!-- nav -->
+    <div class="h-[80px] w-screen bg-black z-10 fixed px-4 pt-4 rounded-t-md">
+      <nav class="flex h-16 w-full bg-[#c4c4c4] border-b-4 border-black rounded-t-md">
+        <ul
+          class="flex flex-row text-2xl h-full items-center baloo-thambi-2-600 w-full"
+        >
+          <a href="/rush/">
+            <li class="py-4 px-8 h-full">
+              <img src="assets/gray-pattern.svg" class="w-8 h-8 rounded-full border-black border-4" />
+            </li>
+          </a>
+          <div class="flex-grow"></div>
+          <a href="index.html">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              Home
+            </li>
+          </a>
+          <a href="#namthip">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              My self
+            </li>
+          </a>
+          <a href="#journey">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              My journey
+            </li>
+          </a>
+          <a href="#skills">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              Skills
+            </li>
+          </a>
+          <a href="#contacts">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              Contacts
+            </li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- main -->
+    <div class="bg-[url('assets/gray-pattern.svg')] bg-[length:7px_7px] w-auto h-full mx-4 rounded-md pt-32">
       <div class="w-full max-w-screen-xl px-4 mx-auto">
         <!-- card -->
         <div
@@ -38,7 +78,7 @@
               </div>
             </div>
             <div class="flex items-center justify-center h-full w-full">
-              <p class="text-xl baloo-thambi-2-600">namthip.html</p>
+              <p class="text-xl baloo-thambi-2-600" id="namthip">namthip.html</p>
             </div>
           </div>
 
@@ -58,7 +98,7 @@
                 <p class="text-2xl">
                   Welcome to my portfolio! I'm Namthip Chobthum, a diligent Computer Science student driven by a passion for technology and its transformative potential. Throughout my academic journey at KMITL, I've delved into a diverse range of coursework and projects, shaping my skills and igniting my curiosity for solving real-world problems through innovative solutions.
                 </p>
-                <h2 class="text-4xl baloo-thambi-2-600">My journey</h2>
+                <h2 class="text-4xl baloo-thambi-2-600" id="journey">My journey</h2>
                 <p class="text-2xl">
                   My journey into the world of Computer Science began with a fascination for understanding how technology shapes our daily lives. From programming fundamentals to advanced algorithms, every aspect of my education has contributed to my growth as a versatile and adaptable problem-solver. I've embraced challenges head-on, learning to navigate complexities and uncovering opportunities for creativity within constraints.
                 </p>
@@ -66,25 +106,33 @@
                   One of the most rewarding aspects of being a Computer Science student is the ability to apply theoretical knowledge to practical applications. From developing software solutions to analyzing large datasets, I've had the opportunity to work on projects that not only expand my skill set but also make a tangible impact. Whether it's crafting elegant code or leveraging machine learning techniques, I'm committed to delivering solutions that are not just functional but also intuitive and user-centric.
                 </p>
 
-                <h2 class="text-4xl baloo-thambi-2-600 pt-7">contacts</h2>
+                <h2 class="text-4xl baloo-thambi-2-600" id="skills">
+                  Skills
+                </h2>
+                <div class="flex space-x-6">
+                  <img src="assets/cpp.svg" alt="c++" class="w-16 h-16" />
+                  <img src="assets/python.svg" alt="python" class="w-16 h-16" />
+                </div>
+
+                <h2 class="text-4xl baloo-thambi-2-600 pt-7" id="contacts">contacts</h2>
                 <div class="flex space-x-6">
                   <a href="mailto:someone@example.com">
-                    <img src="assets/email.svg" alt="email" />
+                    <img src="assets/email.svg" alt="email" class="w-16 h-16" />
                   </a>
                   <a href="https://github.com">
-                    <img src="assets/github.svg" alt="github" />
+                    <img src="assets/github.svg" alt="github" class="w-16 h-16" />
                   </a>
                   <a href="https://twitter.com">
-                    <img src="assets/twitter.svg" alt="twitter" />
+                    <img src="assets/twitter.svg" alt="twitter" class="w-16 h-16" />
                   </a>
                   <a href="https://facebook.com">
-                    <img src="assets/facebook.svg" alt="facebook" />
+                    <img src="assets/facebook.svg" alt="facebook" class="w-16 h-16" />
                   </a>
                   <a href="https://instagram.com">
-                    <img src="assets/instagram.svg" alt="instagram" />
+                    <img src="assets/instagram.svg" alt="instagram" class="w-16 h-16" />
                   </a>
                   <a href="https://linkedin.com">
-                    <img src="assets/linkedin.svg" alt="linkedin" />
+                    <img src="assets/linkedin.svg" alt="linkedin" class="w-16 h-16" />
                   </a>
                 </div>
               </div>
@@ -92,16 +140,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <div
-        class="mx-auto w-full px-4 mb-4 h-full flex items-center justify-center border-t-4 border-black rounded-b-md bg-white"
-      >
-        <footer
-          class="w-full max-w-screen-xl h-12 flex items-center justify-center"
-        >
+
+      <!-- footer -->
+      <div class="mx-auto w-full px-4 mb-4 h-full flex items-center justify-center border-t-4 border-black rounded-b-md bg-white mt-32">
+        <footer class="w-full max-w-screen-xl h-12 flex items-center justify-center">
           <p>&copy; Namthip Chobthum & Phuwit Puthipairoj 2024</p>
         </footer>
       </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>

@@ -23,25 +23,41 @@
         class="flex h-16 w-full bg-[#c4c4c4] border-b-4 border-black rounded-t-md"
       >
         <ul
-          class="flex flex-row text-2xl h-full items-center baloo-thambi-2-600"
+          class="flex flex-row text-2xl h-full items-center baloo-thambi-2-600 w-full"
         >
+          <a href="/rush/">
+            <li class="py-4 px-8 h-full">
+              <img src="assets/gray-pattern.svg" class="w-8 h-8 rounded-full border-black border-4" />
+            </li>
+          </a>
+          <div class="flex-grow"></div>
           <a href="/rush">
-            <li class="py-4 px-8 hover:text-white hover:bg-black h-full">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
               Home
             </li>
           </a>
           <a href="#">
-            <li class="py-4 px-8 hover:text-white hover:bg-black h-full">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
               Phuwit
             </li>
           </a>
+          <a href="#about">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              About
+            </li>
+          </a>
           <a href="#goals">
-            <li class="py-4 px-8 hover:text-white hover:bg-black h-full">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
               Goals
             </li>
           </a>
+          <a href="#skills">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
+              Skills
+            </li>
+          </a>
           <a href="#contacts">
-            <li class="py-4 px-8 hover:text-white hover:bg-black h-full">
+            <li class="py-4 px-8 hover:text-white hover:bg-black h-full transition-colors">
               Contacts
             </li>
           </a>
@@ -79,7 +95,7 @@
           <div class="w-full py-32 px-4 bg-white flex justify-center">
             <div class="h-fit flex flex-col max-w-screen-md justify-between">
               <div class="flex flex-col space-y-8">
-                <h1 class="text-7xl baloo-thambi-2-700">
+                <h1 class="text-7xl baloo-thambi-2-700" id="about">
                   My name is<br />Phuwit Puthipairoj.
                 </h1>
                 <div
@@ -125,27 +141,46 @@
                   of technology to make a positive impact on society.
                 </p>
 
+                <h2 class="text-4xl baloo-thambi-2-600" id="skills">
+                  Skills
+                </h2>
+                <div class="flex w-full gap-x-6 gap-y-4 flex-wrap">
+                  <img src="assets/linux.svg" alt="linux" class="w-16 h-16 p-1" />
+                  <img src="assets/bash.svg" alt="bash" class="w-16 h-16 p-1" />
+                  <img src="assets/c.svg" alt="c" class="w-16 h-16 p-1" />
+                  <img src="assets/cpp.svg" alt="c++" class="w-16 h-16 p-1" />
+                  <img src="assets/git.svg" alt="git" class="w-16 h-16 p-1" />
+                  <img src="assets/python.svg" alt="python" class="w-16 h-16 p-1" />
+                  <img src="assets/html5.svg" alt="html5" class="w-16 h-16 p-1" />
+                  <img src="assets/css3.svg" alt="css3" class="w-16 h-16 p-1" />
+                  <img src="assets/javascript.svg" alt="javascript" class="w-16 h-16 p-1" />
+                  <img src="assets/react.svg" alt="react" class="w-16 h-16 p-1" />
+                  <img src="assets/tailwind.svg" alt="tailwind" class="w-16 h-16 p-1" />
+                  <img src="assets/jr.svg" alt="jr (japan railway)" class="w-16 h-16 p-1" />
+                  <img src="assets/khanacademy.svg" alt="khan academy" class="w-16 h-16 p-1" />
+                </div>
+
                 <h2 class="text-4xl baloo-thambi-2-600" id="contacts">
                   Contacts
                 </h2>
-                <div class="flex space-x-6">
+                <div class="flex w-full gap-x-6 gap-y-4 flex-wrap">
                   <a href="mailto:someone@example.com">
-                    <img src="assets/email.svg" alt="email" />
+                    <img src="assets/email.svg" alt="email" class="w-16 h-16" />
                   </a>
                   <a href="https://github.com">
-                    <img src="assets/github.svg" alt="github" />
+                    <img src="assets/github.svg" alt="github" class="w-16 h-16" />
                   </a>
                   <a href="https://twitter.com">
-                    <img src="assets/twitter.svg" alt="twitter" />
+                    <img src="assets/twitter.svg" alt="twitter" class="w-16 h-16" />
                   </a>
                   <a href="https://facebook.com">
-                    <img src="assets/facebook.svg" alt="facebook" />
+                    <img src="assets/facebook.svg" alt="facebook" class="w-16 h-16" />
                   </a>
                   <a href="https://instagram.com">
-                    <img src="assets/instagram.svg" alt="instagram" />
+                    <img src="assets/instagram.svg" alt="instagram" class="w-16 h-16" />
                   </a>
                   <a href="https://linkedin.com">
-                    <img src="assets/linkedin.svg" alt="linkedin" />
+                    <img src="assets/linkedin.svg" alt="linkedin" class="w-16 h-16" />
                   </a>
                 </div>
               </div>
