@@ -109,6 +109,9 @@
               break;
             case "/":
               result = n1 / n2;
+              if (n2 === 0) {
+                result = "It's over 9000!";
+              }
               break;
             case "%":
               result = n1 % n2;
