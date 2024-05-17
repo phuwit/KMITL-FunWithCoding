@@ -26,55 +26,57 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script>
-      $("#balloon").css("background-color", 'red');
-      let clicked = false;
+      $(document).ready(function(){
+        $("#balloon").css("background-color", 'red');
+        let clicked = false;
 
-      const colors = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)'];
+        const colors = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)'];
 
-      function cycleColor() {
-        let colorIndex = colors.findIndex((element) => element === $("#balloon").css("background-color"));
-        let sizePx = Number($("#balloon").css('width').slice(0, -2));
-        // console.log('before', clicked, sizePx, colorIndex)
+        function cycleColor() {
+          let colorIndex = colors.findIndex((element) => element === $("#balloon").css("background-color"));
+          let sizePx = Number($("#balloon").css('width').slice(0, -2));
+          // console.log('before', clicked, sizePx, colorIndex)
 
-        if(clicked) {
-          colorIndex += 1;
-          if (colorIndex >= colors.length) {
-            colorIndex = 0;
+          if(clicked) {
+            colorIndex += 1;
+            if (colorIndex >= colors.length) {
+              colorIndex = 0;
+            }
+
+            sizePx += 10;
+            if (sizePx > 420) {
+              sizePx = 200
+            }
+          } else {
+            colorIndex -= 1;
+            if (colorIndex < 0) {
+              colorIndex = colors.length - 1;
+            }
+
+            sizePx -= 5;
+            if (sizePx < 200) {
+              sizePx = 200;
+            }
           }
 
-          sizePx += 10;
-          if (sizePx > 420) {
-            sizePx = 200
-          }
-        } else {
-          colorIndex -= 1;
-          if (colorIndex < 0) {
-            colorIndex = colors.length - 1;
-          }
+          console.log('after', sizePx, colorIndex)
 
-          sizePx -= 5;
-          if (sizePx < 200) {
-            sizePx = 200;
-          }
+          $("#balloon").css("background-color", colors[colorIndex])
+          $("#balloon").css("width", `${sizePx}px`);
+          $("#balloon").css("height", `${sizePx}px`);
         }
 
-        console.log('after', sizePx, colorIndex)
-
-        $("#balloon").css("background-color", colors[colorIndex])
-        $("#balloon").css("width", `${sizePx}px`);
-        $("#balloon").css("height", `${sizePx}px`);
-      }
-
-      $("#balloon").mouseup(function(){
-        clicked = true;
-        cycleColor();
-      });
-
-      $("#balloon").mouseleave(function(){
-        if (clicked === false) {
+        $("#balloon").mouseup(function(){
+          clicked = true;
           cycleColor();
-        }
-        clicked = false;
+        });
+
+        $("#balloon").mouseleave(function(){
+          if (clicked === false) {
+            cycleColor();
+          }
+          clicked = false;
+        });
       });
     </script>
   </body>
