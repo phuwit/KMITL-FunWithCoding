@@ -19,12 +19,9 @@ $(document).ready(function(){
     cookies.forEach(cookie => {
       if (cookie.startsWith(cookieKey)) {
         const cookieValue = cookie.replace(cookieKey, '');
-        console.log(cookieValue);
         $("#ft_list").html(decodeURIComponent(cookieValue));
       }
     });
-
-    console.log($("#ft_list").children())
 
     if ($("#ft_list").children().length === 0) {
       document.cookie = `${cookieKey}${COOKIE_OPTIONS}`;

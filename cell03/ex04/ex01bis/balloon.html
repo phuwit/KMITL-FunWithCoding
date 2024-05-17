@@ -42,21 +42,17 @@
             if (colorIndex >= colors.length) {
               colorIndex = 0;
             }
-
             sizePx += 10;
-            if (sizePx > 420) {
-              sizePx = 200
-            }
           } else {
             colorIndex -= 1;
             if (colorIndex < 0) {
               colorIndex = colors.length - 1;
             }
-
             sizePx -= 5;
-            if (sizePx < 200) {
-              sizePx = 200;
-            }
+          }
+          
+          if (sizePx > 420 || sizePx < 200) {
+            sizePx = 200
           }
 
           // console.log('after', sizePx, colorIndex)

@@ -85,13 +85,14 @@
       $(document).ready(function(){
         $("#calculateButton").mouseup(function(){
           const operation = $("#operationSelector").val();
-          const n1 = Number($("#n1").val());
-          const n2 = Number($("#n2").val());
+          const regex = /^\d+$/;
+          const n1Raw = $("#n1").val()
+          const n2Raw = $("#n2").val()
+          const n1 = Number(n1Raw);
+          const n2 = Number(n2Raw);
           let result = "Error :(";
 
-          console.log(n1, operation, n2);
-
-          if (isNaN(n1) || n1 < 0 || isNaN(n2) || n2 < 0) {
+          if (!regex.test(n1Raw) || !regex.test(n2Raw)) {
             window.alert("Error :(");
             return;
           }
