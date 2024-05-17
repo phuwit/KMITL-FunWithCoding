@@ -77,13 +77,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script>
-      function display(text) {
-        console.log(text);
-        window.alert(text);
-      }
-
       const intervalUseMe = setInterval(
-        () => display("Please, use me..."),
+        () => window.alert("Please, use me..."),
         30 * 1000
       );
 
@@ -97,7 +92,7 @@
           console.log(n1, operation, n2);
 
           if (isNaN(n1) || n1 < 0 || isNaN(n2) || n2 < 0) {
-            display(result);
+            window.alert("Error :(");
             return;
           }
 
@@ -125,7 +120,8 @@
               break;
           }
 
-          display(result);
+          console.log(result);
+          window.alert(result);
         });
       });
     </script>

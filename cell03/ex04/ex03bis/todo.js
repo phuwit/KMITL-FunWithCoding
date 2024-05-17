@@ -8,7 +8,7 @@ $(document).ready(function(){
     cookies.forEach(cookie => {
       if (cookie.startsWith(cookieKey)) {
         const cookieValue = cookie.replace(cookieKey, '');
-        document.cookie = `${cookieKey}<div>${title}</div>${cookieValue}${COOKIE_OPTIONS}`
+        document.cookie = `${cookieKey}${encodeURIComponent(`<div>${title}</div>`)}${cookieValue}${COOKIE_OPTIONS}`
       }
     });
   }
@@ -20,7 +20,7 @@ $(document).ready(function(){
       if (cookie.startsWith(cookieKey)) {
         const cookieValue = cookie.replace(cookieKey, '');
         console.log(cookieValue);
-        $("#ft_list").html(cookieValue);
+        $("#ft_list").html(decodeURIComponent(cookieValue));
       }
     });
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
         const cookieKey = `${COOKIE_NAME}=`
         cookies.forEach(cookie => {
           if (cookie.startsWith(cookieKey)) {
-            document.cookie = `${cookieKey}${$("#ft_list").html()}${COOKIE_OPTIONS}`
+            document.cookie = `${cookieKey}${encodeURIComponent($("#ft_list").html())}${COOKIE_OPTIONS}`
           }
         });
       });
