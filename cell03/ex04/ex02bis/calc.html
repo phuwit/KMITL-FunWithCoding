@@ -85,14 +85,14 @@
       $(document).ready(function(){
         $("#calculateButton").mouseup(function(){
           const operation = $("#operationSelector").val();
-          const regex = /^\d+$/;
+          const regex = /[^0-9]+/;
           const n1Raw = $("#n1").val()
           const n2Raw = $("#n2").val()
           const n1 = Number(n1Raw);
           const n2 = Number(n2Raw);
           let result = "Error :(";
 
-          if (!regex.test(n1Raw) || !regex.test(n2Raw)) {
+          if (regex.test(n1Raw) || regex.test(n2Raw)) {
             window.alert("Error :(");
             return;
           }
