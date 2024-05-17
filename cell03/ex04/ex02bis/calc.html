@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        margin: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+
+      label {
+        display: block;
+      }
+
+      .flex {
+        display: flex;
+        margin: 16px;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      input,
+      select,
+      label,
+      button {
+        height: fit-content;
+        width: fit-content;
+        margin: 8px 16px;
+      }
+
+      button {
+        font-size: x-large;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col">
+      <div class="flex">
+        <div>
+          <label for="n1">Number: </label>
+          <input type="text" id="n1" />
+        </div>
+
+        <div>
+          <label for="n1">Operation: </label>
+          <select id="operationSelector">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="n1">Number: </label>
+          <input type="text" id="n2" />
+        </div>
+      </div>
+
+      <div class="flex">
+        <button id="calculateButton">Try me!</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script>
+      const operationSelector = document.getElementById("operationSelector");
+      const calculateButton = document.getElementById("calculateButton");
+      const textBoxn1 = document.getElementById("n1");
+      const textBoxn2 = document.getElementById("n2");
+
+      function display(text) {
+        console.log(text);
+        window.alert(text);
+      }
+
+      const intervalUseMe = setInterval(
+        () => display("Please, use me..."),
+        30 * 1000
+      );
+
+      calculateButton.addEventListener("mouseup", () => {
+        const operation = operationSelector.value;
+        const n1 = Number(textBoxn1.value);
+        const n2 = Number(textBoxn2.value);
+        let result = "Error :(";
+
+        console.log(n1, operation, n2);
+
+        if (String(n1) == "NaN" || n1 < 0 || String(n2) == "NaN" || n2 < 0) {
+          display('Error :(');
+          return;
+        }
+
+        switch (operation) {
+          case "+":
+            result = n1 + n2;
+            break;
+          case "-":
+            result = n1 - n2;
+            break;
+          case "*":
+            result = n1 * n2;
+            break;
+          case "/":
+            result = n1 / n2;
+            break;
+          case "%":
+            result = n1 % n2;
+            if (n2 === 0) {
+              result = "It's over 9000!";
+            }
+            break;
+          default:
+            result = "Error :(";
+            break;
+        }
+
+        display(result);
+      });
+    </script>
+  </body>
+</html>
