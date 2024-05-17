@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body > * + * {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo list:</h1>
+  <div id="ft_list"></div>
+  <button id="newButton">New</button>
+
+  <script src="todo.js"></script>
+</body>
+</html>
