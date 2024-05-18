@@ -92,7 +92,8 @@
           const n2 = Number(n2Raw);
           let result = "Error :(";
 
-          if (regex.test(n1Raw) || regex.test(n2Raw)) {
+          if (regex.test(n1Raw) || regex.test(n2Raw) || n1Raw === '' || n2Raw === '')  {
+            console.log("Error :(");
             window.alert("Error :(");
             return;
           }
